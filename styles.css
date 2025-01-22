@@ -1,0 +1,276 @@
+body {
+      font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #tm-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #tm-popup {
+            padding: 40px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000000;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        h2, h4 {
+            margin-bottom: 10px;
+        }
+
+        .wheel-and-hamster {
+            --dur: 1s;
+            position: relative;
+            width: 12em;
+            height: 12em;
+            margin: auto;
+        }
+
+        .wheel-and-hamster .wheel,
+        .wheel-and-hamster .hamster {
+            position: absolute;
+        }
+
+        .wheel-and-hamster .wheel {
+            background: #e5e5e5;
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            animation: spin var(--dur) linear infinite;
+        }
+
+        .wheel-and-hamster .hamster {
+            animation: run var(--dur) linear infinite;
+            top: 3.25em;
+            left: calc(50% - 3.5em);
+            width: 7em;
+            height: 3.75em;
+            z-index: 1;
+        }
+
+        .wheel-and-hamster .hamster__head {
+            animation: s var(--dur) steps(2) infinite;
+            background: #e2d9c7;
+            border-radius: 70% 70% 0 0;
+            width: 2.25em;
+            height: 2.75em;
+            position: absolute;
+            top: 0.5em;
+            left: 0;
+        }
+
+        .wheel-and-hamster .hamster__ear {
+            animation: s var(--dur) steps(2) infinite;
+            background: #e2d9c7;
+            border-radius: 50%;
+            width: 1em;
+            height: 1em;
+            position: absolute;
+            top: 0;
+            left: 0.75em;
+        }
+
+        .wheel-and-hamster .hamster__eye {
+            animation: s var(--dur) steps(2) infinite;
+            background: #000;
+            border-radius: 50%;
+            width: 0.375em;
+            height: 0.375em;
+            position: absolute;
+            top: 0.75em;
+            left: 0.5em;
+        }
+
+        .wheel-and-hamster .hamster__nose {
+            background: #d57286;
+            border-radius: 70% 30% 50% 50%;
+            width: 0.375em;
+            height: 0.25em;
+            position: absolute;
+            top: 1.25em;
+            left: 0;
+        }
+
+        .wheel-and-hamster .hamster__body {
+            background: #f5e9cf;
+            border-radius: 50% 30% 70% 30%;
+            box-shadow: 0 -0.25em 0 #e2d9c7 inset;
+            width: 4.5em;
+            height: 2.5em;
+            position: absolute;
+            top: 1em;
+            left: 2.25em;
+        }
+
+        .wheel-and-hamster .hamster__limb--fr,
+        .wheel-and-hamster .hamster__limb--fl {
+            animation: s var(--dur) steps(2) infinite;
+            background: #f5e9cf;
+            border-radius: 0.5em;
+            box-shadow: 0 -0.125em 0 #e2d9c7 inset;
+            top: 1.75em;
+            left: 2em;
+            width: 0.75em;
+            height: 1.5em;
+            position: absolute;
+        }
+
+        .wheel-and-hamster .hamster__limb--br,
+        .wheel-and-hamster .hamster__limb--bl {
+            animation: s var(--dur) steps(2) infinite;
+            background: #f5e9cf;
+            border-radius: 0.5em;
+            box-shadow: 0 -0.125em 0 #e2d9c7 inset;
+            top: 1.75em;
+            left: 5em;
+            width: 0.75em;
+            height: 1.5em;
+            position: absolute;
+        }
+
+        .wheel-and-hamster .hamster__limb--fr {
+            animation-name: s, rfr;
+        }
+
+        .wheel-and-hamster .hamster__limb--fl {
+            animation-name: s, rfl;
+        }
+
+        .wheel-and-hamster .hamster__limb--br {
+            animation-name: s, rbr;
+        }
+
+        .wheel-and-hamster .hamster__limb--bl {
+            animation-name: s, rbl;
+        }
+
+        .wheel-and-hamster .hamster__tail {
+            animation: s var(--dur) linear infinite;
+            background: #e2d9c7;
+            border-radius: 0.25em;
+            width: 1em;
+            height: 0.5em;
+            position: absolute;
+            top: 2em;
+            left: 6.25em;
+        }
+
+        .wheel-and-hamster .spoke {
+            background: #c5c5c5;
+            border-radius: 0.25em;
+            width: 0.25em;
+            height: 5em;
+            position: absolute;
+            top: 3.5em;
+            left: calc(50% - 0.125em);
+        }
+
+        .wheel-and-hamster .spoke:nth-child(1) {
+            animation: b var(--dur) linear infinite;
+            transform-origin: 50% 3.5em;
+        }
+
+        .wheel-and-hamster .spoke:nth-child(2) {
+            animation: b var(--dur) linear infinite;
+            transform: rotate(60deg);
+            transform-origin: 50% 3.5em;
+        }
+
+        .wheel-and-hamster .spoke:nth-child(3) {
+            animation: b var(--dur) linear infinite;
+            transform: rotate(120deg);
+            transform-origin: 50% 3.5em;
+        }
+
+        .wheel-and-hamster .spoke:nth-child(4) {
+            animation: b var(--dur) linear infinite;
+            transform: rotate(180deg);
+            transform-origin: 50% 3.5em;
+        }
+
+        .wheel-and-hamster .spoke:nth-child(5) {
+            animation: b var(--dur) linear infinite;
+            transform: rotate(240deg);
+            transform-origin: 50% 3.5em;
+        }
+
+        .wheel-and-hamster .spoke:nth-child(6) {
+            animation: b var(--dur) linear infinite;
+            transform: rotate(300deg);
+            transform-origin: 50% 3.5em;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes run {
+            to {
+                transform: translateX(0.25em);
+            }
+        }
+
+        @keyframes s {
+            50% {
+                transform: scaleY(0.8);
+            }
+        }
+
+        @keyframes rfr {
+            50% {
+                transform: rotate(40deg);
+            }
+        }
+
+        @keyframes rfl {
+            50% {
+                transform: rotate(-40deg);
+            }
+        }
+
+        @keyframes rbr {
+            50% {
+                transform: rotate(-30deg);
+            }
+        }
+
+        @keyframes rbl {
+            50% {
+                transform: rotate(20deg);
+            }
+        }
+
+        @keyframes b {
+            50% {
+                background: #fff;
+            }
+        }
+
+        @keyframes swing {
+            50% {
+                transform: rotate(15deg);
+            }
+        }
